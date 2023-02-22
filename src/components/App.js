@@ -23,6 +23,12 @@ function App() {
     setToys(updatedToys);
   }
 
+  function handleDeleteToy(deletedToy) {
+    const updatedToys = toys.filter((toy) => 
+      toy.id !== deletedToy.id);
+    setToys(updatedToys);
+  }
+
   return (
     <>
       <Header />
@@ -34,6 +40,7 @@ function App() {
       </div>
       <ToyContainer 
         toys={toys}
+        onDeleteToy={handleDeleteToy}
       />
     </>
   );
